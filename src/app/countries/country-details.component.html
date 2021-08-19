@@ -1,0 +1,18 @@
+<div *ngIf="_country">
+  <h2>{{_country.name}}</h2>
+
+  <ul *ngIf="_country.states">
+    <li *ngFor="let state of _country.states">
+      {{state.name}}
+    </li>
+  </ul>
+
+  Z<p>
+    <input type="text" [(ngModel)]="_newState">
+    <a href (click)="addState(); false">Add {{ _newState }}</a>
+  </p>
+
+  <p>
+    <a href [routerLink]="['/countries']">Back</a>
+  </p>
+</div>

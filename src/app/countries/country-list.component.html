@@ -1,0 +1,12 @@
+<div *ngIf="_countries && _countries.length">
+  <h2>Countries</h2>
+  <ul>
+    <li *ngFor="let country of _countries">
+      {{ country.name }}
+
+      <a [routerLink]="['/countries', country.code]">
+        ({{ country.states.length }} states)
+      </a>
+    </li>
+  </ul>
+</div>
